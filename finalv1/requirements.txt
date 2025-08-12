@@ -1,0 +1,17 @@
+boto3
+pandas
+numpy
+umap-learn
+hdbscan
+optuna
+scikit-learn
+matplotlib
+seaborn
+plotly
+jupyter
+ipywidgets
+tqdm
+pyyaml
+chromadb
+mlflow
+

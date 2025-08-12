@@ -1,0 +1,72 @@
+# AWS Configuration
+aws:
+  region: us-east-1
+  bedrock:
+    model_id: meta.llama3-8b-instruct-v1:0
+    embedding_model_id: amazon.titan-embed-text-v2:0
+    max_gen_len: 512
+    temperature: 0.5
+
+# UMAP Configuration
+umap:
+  n_neighbors: 5
+  n_components: 2
+  min_dist: 0.01
+  metric: cosine
+  random_state: 42
+
+# HDBSCAN Configuration
+hdbscan:
+  min_cluster_size: 3
+  min_samples: 2
+  cluster_selection_epsilon: 0.1
+  alpha: 1.0
+
+# Optuna Configuration
+optuna:
+  n_trials: 50
+  timeout: 3600  # 1 hour
+  study_name: "complaint_clustering_optimization"
+  storage: "sqlite:///mlflow.db"
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "complaint_analysis"
+  model_name: "complaint_clustering_model"
+
+# RAG Configuration
+rag:
+  chunk_size: 1000
+  chunk_overlap: 200
+  similarity_threshold: 0.7
+  max_results: 10
+
+
+# System Configuration
+system:
+  max_file_size: 100MB
+  supported_formats: ["csv"]
+  batch_size: 1000
+  max_workers: 4
+  log_level: "INFO"
+  data_dir: "data"
+  models_dir: "models"
+  logs_dir: "logs"
+
+# API Configuration
+api:
+  host: "127.0.0.1"
+  port: 8003
+  debug: false
+  cors_origins: ["http://localhost:3000", "http://localhost:8501"]
+
+# Frontend Configuration
+frontend:
+  flask:
+    host: "0.0.0.0"
+    port: 5000
+    debug: false
+  streamlit:
+    port: 8501
+    theme: "light"
